@@ -1,0 +1,43 @@
+{
+  "dataSource": {
+    "type": "SqlServer",
+    "config": {
+      "connectionString": "Server=localhost\\SQLEXPRESS;Database=AdventureWorks2019;Trusted_Connection=True;"
+    }
+  },
+  "tables": [
+    {
+      "name": "Person",
+      "schema": "Person",
+      "primaryKeyColumn": "BusinessEntityID",
+      "criteria": "ModifiedDate >= '20140101'",
+      "columns": [
+        {
+          "name": "FirstName",
+          "type": "FirstName"
+        },
+        {
+          "name": "MiddleName",
+          "type": "LastName"
+        },
+        {
+          "name": "LastName",
+          "type": "LastName"
+        }
+      ]
+    },
+    {
+      "name": "PersonPhone",
+      "schema": "Person",
+      "primaryKeyColumn": "BusinessEntityID",
+      "columns": [
+        {
+          "name": "PhoneNumber",
+          "type": "PhoneNumber",
+          "retainNullValues": false,
+          "stringFormatPattern": "+447#########"
+        }
+      ]
+    }
+  ]
+}
