@@ -16,7 +16,8 @@ internal class Program
         Log.Information("DataAnonymizer started");
         Log.Information(new string('-', 30));
 
-        Config config = Config.Load("configAdventureWorks.example.json");
+        var configurationFilename = args[0];
+        Config config = Config.Load(configurationFilename);
 
         var specificScripts = File
                 .ReadAllText("SpecificScripts.sql")
