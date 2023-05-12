@@ -19,6 +19,13 @@ DatabaseAnonymizer.exe configAdventureWorks.example.json
 2. If you need to run specific SQL commands on the database prior to running the anonymization process, you can do that by updating the `SpecificScripts.sql` file. You can take a look at that file as an example.
 3. And that's it. The anonymization is configured in a declarative way. Given that the binary is an executable file, you can integrate it within a scheduler to run whenever you need your database to be anonymized.
 
+## Try it in action
+
+The example configuration is written to work with [AdventureWorks](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms) Database. So feel free to download it, restore on your local SQL Servel instance and start the app. You will have anonymized Person table ( FirstName, MiddleName, LastName ) and PersonPhone table ( PhoneNumber ) after the execution. 
+```
+DatabaseAnonymizer.exe configAdventureWorks.example.json
+```
+
 ## Contribution Ideas
 
 The application works for us, but we're sure that it can be further refactored to be more generic. We accept pull requests to make this project easier to use. Though the application emits logs about its process, another idea can be to send notifications to specific sinks (such as Slack or email) whenever the anonymization process has completed. Furthermore, this README file can always be updated to make it easier to read.
